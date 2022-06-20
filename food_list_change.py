@@ -30,5 +30,20 @@ def main():
     except ValueError:  # Информация об ошибке
         print("Эта еда не была найдена")
 
+    delete = int(input("Если вы хотите удалить еду из списка введите - '5': "))
+
+    try:
+        if delete == 5:
+            change_item_delete = input(
+                "Введите название еды, которую хотите удалить: ")  # Получаем значение еды, которую хотим удалить
+            food.remove(change_item_delete)  # Удаляем эту еду
+
+            print("Новый список: ")
+            for i in food:  # Выводим новый список
+                print(i)
+
+    except ValueError:
+        print("Эта еда не найдена в списке")
+
 
 main()
